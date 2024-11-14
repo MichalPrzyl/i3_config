@@ -13,7 +13,9 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+
+font pango:monospace 5
+
 exec "setxkbmap -layout pl"
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -197,6 +199,16 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         #status_command i3status
+        #status_command i3status -c /home/$USER/.config/i3status/i3status.conf
+        colors {
+                background $bgcolor
+                separator #191919
+                #                       border          background      text
+                focused_workspace       $bgcolor        $bgcolor        $text
+                inactive_workspace      $in-bgcolor     $in-bgcolor     $text
+                urgent_workspace        $u-bgcolor      $u-bgcolor      $text   
+
+        }
 }
 
 
